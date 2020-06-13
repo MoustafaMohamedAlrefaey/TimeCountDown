@@ -1,0 +1,177 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+
+<html lang="en">
+  <head>
+    <title>Time Count Down</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="manifest" href="/manifest.json">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="" />
+  <meta name="Keywords" content="" />
+  <meta http-equiv="Content-Language" content="en" />
+  <meta http-equiv="EXPIRES" content="" />
+  <meta name="expires" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- OG data -->
+  <meta name="description" content="" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="twitter:title" content="" />
+  <meta property="twitter:description" content="" />
+  <!-- For IE 9 and below. ICO should be 32x32 pixels in size -->
+  <!--[if IE]><link rel="shortcut icon" href="//mediakey1.ef.com/sitecore/__/~/media/universal/favicons/favicon-32.ico"><![endif]-->
+  <!-- Touch Icons - iOS and Android 2.1+ -->
+  <link rel="apple-touch-icon" sizes="57x57" href="">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="">
+  <link rel="apple-touch-icon" sizes="72x72" href="">
+  <link rel="apple-touch-icon" sizes="114x114" href="">
+  <link rel="apple-touch-icon" sizes="120x120" href="">
+  <link rel="apple-touch-icon" sizes="144x144" href="">
+  <link rel="apple-touch-icon" sizes="152x152" href="">
+  <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
+  <link rel="icon" href="">
+  <style type="text/css">
+
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: #333;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #2799ff;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: row;
+      height: 100vh;
+      font-family: Century Gothic;     
+      margin: 0;
+      background-image: url('atmosphere-background-bright-clouds-19670.jpg');
+      background-repeat: round;
+    }
+
+    .wrapper {
+      text-align: center;
+    }
+
+    h1 {
+      color: white;
+    }
+
+
+    .countdown {
+      display: flex;
+    }
+
+    .countdown .day,
+    .countdown .hour,
+    .countdown .min,
+    .countdown .sec {
+      color: black;
+      padding: 1vw 3vw;
+      text-align: center;
+    }
+
+    .countdown .day .num,
+    .countdown .hour .num,
+    .countdown .min .num,
+    .countdown .sec .num {
+      display: block;
+      font-size: 8vw;
+      line-height: 1em;
+    }
+
+    .countdown .day .word,
+    .countdown .hour .word,
+    .countdown .min .word,
+    .countdown .sec .word {
+      display: block;
+      font-size: 2vw;
+      color: #8a99ab;
+    }
+  </style>
+
+  <!-- TITLE -->
+  <!-- <title>CountdownJS</title> -->
+  </head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <div class="wrapper">
+      <!-- <h1>countdownJS</h1> -->
+
+      <div class="PrivateArea">
+
+        <div class="form-group">
+          <div class="MyDateAndTime">
+
+            <label for="datePicker">Target Date:</label>
+            <input type="date" id="datePicker" name="TargetDate">
+         
+            <label for="TimePicker">Target Time:</label>
+            <input type="time"  id="TimePicker" value="now" name="TargetTime">
+
+            <!-- <label for="StopAlarm">Stop Alarm:</label>
+            <input type="button" class="form-control"  id="StopAlarm"  value="Stop Alarm"> -->
+          </div>
+
+          <button class="form-control" onclick="testClicked()" type="button">Click To Generate Time Count Down </button>
+        </div>
+
+
+
+        <div class="TextArea">
+          <div class="form-group shadow-textarea">
+            <label for="exampleFormControlTextarea6"></label>
+            <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write your paragraph here..."></textarea>
+          </div>
+      </div>
+
+      </div>
+
+      <div class="countdown" id="datePickerDiv" data-date="" data-time="">
+        <div class="day"><span class="num"></span><span class="word"></span></div>
+        <div class="hour"><span class="num"></span><span class="word"></span></div>
+        <div class="min"><span class="num"></span><span class="word"></span></div>
+        <div class="sec"><span class="num"></span><span class="word"></span></div>
+      </div>
+    </div>
+  
+    <script type="text/javascript" src="./countdown.js"></script>
+    <script type="text/javascript" src="./init.js"></script>
+  </body>
+</html>
+
